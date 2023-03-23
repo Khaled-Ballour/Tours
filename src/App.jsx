@@ -33,6 +33,25 @@ const App = () => {
         <Loading />
       </main>
     );
+
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tour left</h2>
+          <button
+            type="button"
+            style={{ marginTop: '2rem' }}
+            className="btn"
+            onClick={getTours}
+          >
+            refresh
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   if (tours)
     return (
       <main>
